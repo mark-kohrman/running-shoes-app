@@ -2,5 +2,5 @@
   id: @shoe.id,
   brand: @shoe.brand,
   price: @shoe.price,
-  color: @shoe.color
+  color: @shoe.color,
 }

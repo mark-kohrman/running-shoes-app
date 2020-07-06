@@ -18,4 +18,21 @@ class Api::ShoesController < ApplicationController
     @shoe.save  
     render 'show.json.jb'
   end
+
+  def update
+    @shoe = Shoe.find_by(id: params[:id])
+    @shoe.update(
+      brand: params[:the_brand],
+      price: params[:the_price],
+      color: params[:the_color]
+    )
+    render 'show.json.jb'
+  end
+
+  def destroy
+    @shoe = Shoe.find_by(id: params[:id])
+    @shoe.destroy
+    render json: {message: "Shoe successfully destroyed"}
+  end
+    
 end
